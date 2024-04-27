@@ -1,10 +1,10 @@
 var form = document.getElementById('formulario');
 
-form.addEventListener('submit', function (event) {
+form.addEventListener('submit', function(event) {
     event.preventDefault();
 
     var nome = document.getElementById('nome').value;
-    var numero = document.getElementById('numero').value;
+    var numero = parseInt(document.getElementById('numero').value); // Convertendo para número
 
     adicionarATabela(nome, numero);
 
@@ -25,7 +25,7 @@ function adicionarATabela(nome, numero) {
 
     var botaoExcluir = document.createElement('button');
     botaoExcluir.textContent = 'Excluir';
-    botaoExcluir.addEventListener('click', function () {
+    botaoExcluir.addEventListener('click', function() {
         corpoTabela.removeChild(novaLinha);
     });
 
@@ -35,5 +35,17 @@ function adicionarATabela(nome, numero) {
     novaLinha.appendChild(celulaNumero);
     novaLinha.appendChild(celulaExcluir);
 
-    corpoTabela.appendChild(novaLinha);
+    // Classificar a tabela antes de adicionar a nova linha
+    var linhas = corpoTabela.querySelectorAll('tr');
+    var linhasArray = Array.from(linhas);
+    linhasArray.push(novaLinha);
+    linhasArray.sort(function(a, b) {
+        var numeroA = parseInt(a.querySelector('td:nth-child(2)').textContent);
+        var numeroB = parseInt(b.querySelector('td:nth-child(2)').textContent);
+        return numeroB - numeroA;
+    });
+
+    linhasArray.forEach(function(linha) {
+        corpoTabela.appendChild(linha);
+    });
 }

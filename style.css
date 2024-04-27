@@ -1,0 +1,93 @@
+/* Reset de estilos padrão */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+    font-family: Arial, sans-serif;
+    /* Definindo uma fonte genérica */
+    color: white;
+    /* Definindo a cor do texto */
+}
+
+/* Estilo para o formulário */
+#formulario {
+    margin-bottom: 20px;
+    padding: 20px;
+    /* Adicionando espaço interno */
+    background-color: #555;
+    /* Fundo do formulário */
+    border: 3px solid #000;
+    /* Borda do formulário */
+}
+
+/* Estilo para os campos de entrada e rótulos */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    /* Deixando os rótulos em negrito */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="submit"] {
+    margin-bottom: 10px;
+    border: 3px solid #000;
+    /* Borda dos campos */
+    padding: 8px;
+    /* Espaçamento interno */
+    font-size: 16px;
+    /* Tamanho da fonte */
+}
+
+/* Estilo para a tabela */
+/* Estilo para a tabela */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    background-color: white;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+    /* Borda inferior mais nítida */
+    border-right: 1px solid #ddd;
+    /* Borda direita mais leve */
+    color: black;
+    /* Definindo a cor do texto */
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    /* Deixando o texto do cabeçalho em negrito */
+}
+
+/* Estilo para as ações na tabela */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actions button {
+    padding: 8px 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    /* Transforma o texto em maiúsculas */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    /* Adiciona uma sombra */
+}
+
+.actions button:hover {
+    background-color: #45a049;
+}
